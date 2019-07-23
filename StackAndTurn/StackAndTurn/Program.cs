@@ -14,7 +14,7 @@ namespace StackAndTurn
             //WriteMatrixFromTheEnd(array);
             VladStack<int> vladStack = new VladStack<int>();
             var numInStack = 0;
-            for(int i = 0; i < 100; i++)
+            for (int i = 0; i < 100; i++)
             {
                 vladStack.Push(i);
             }
@@ -25,7 +25,26 @@ namespace StackAndTurn
                     numInStack = vladStack.Pop();
                     Console.WriteLine(numInStack);
                 }
-                catch(IndexOutOfRangeException)
+                catch (IndexOutOfRangeException)
+                {
+                    Console.WriteLine($"Index Out Of Range");
+                    break;
+                }
+            }
+            VladQueue<int> vladQueue = new VladQueue<int>();
+            var numInQueue = 0;
+            for (int i = 0; i < 100; i++)
+            {
+                vladQueue.Enqueue(i);
+            }
+            while (true)
+            {
+                try
+                {
+                    numInQueue = vladQueue.Dequeue();
+                    Console.WriteLine(numInQueue);
+                }
+                catch (IndexOutOfRangeException)
                 {
                     Console.WriteLine($"Index Out Of Range");
                     break;
